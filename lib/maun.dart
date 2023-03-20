@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 
 void main(List<String> args) {
-  runApp(MaterialApp(home: LoginPage()));
+  runApp(MaterialApp(home: LoginPage(),debugShowCheckedModeBanner: false,));
 }
 
 
@@ -14,7 +14,7 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Login'),
+        title: Center(child: Text('Login')),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -68,6 +68,50 @@ class LoginPage extends StatelessWidget {
                 },
               ),
             ),
+            SizedBox(height: 10.0),
+            Container(
+              padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0),
+              child: ElevatedButton(
+                child: Text('Sign Up'),
+                onPressed: () {Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SignUpPage(),));},
+              ),
+            ),
+             SizedBox(height: 10.0),
+            Container(
+              padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0),
+              child: ElevatedButton(
+                child: Text('Change Password'),
+                onPressed: () {Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ChangePasswordPage(),));},
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Container(
+              padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0),
+              child: ElevatedButton(
+                child: Text('Successful Reagiterer'),
+                onPressed: () {Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SuccessfulRegisteredPage(),));},
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Container(
+              padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0),
+              child: ElevatedButton(
+                child: Text('Confirmation'),
+                onPressed: () {Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ConfirmationPage(),));},
+              ),
+            ),
           ],
         ),
       ),
@@ -81,7 +125,7 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sign Up'),
+        title: Center(child: Text('Sign Up')),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -118,7 +162,10 @@ class SignUpPage extends StatelessWidget {
               padding: EdgeInsets.only(left: 15.0, right: 15.0, top: 15.0),
               child: ElevatedButton(
                 child: Text('Sign Up'),
-                onPressed: () {},
+                onPressed: () {Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SuccessfulRegisteredPage(),));},
               ),
             ),
           ],
@@ -134,7 +181,7 @@ class ForgetPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Forget Password'),
+        title: Center(child: Text('Forget Password')),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -173,7 +220,7 @@ class SuccessfulRegisteredPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Successful Registered'),
+        title: Center(child: Text('Successful Registered')),
       ),
       body: Center(
         child: Column(
@@ -181,17 +228,6 @@ class SuccessfulRegisteredPage extends StatelessWidget {
           children: <Widget>[
             Text('You have successfully registered!'),
             SizedBox(height: 10.0),
-            ElevatedButton(
-              child: Text('Confirm'),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ConfirmationPage(),
-                  ),
-                );
-              },
-            ),
           ],
         ),
       ),
@@ -205,7 +241,7 @@ class ConfirmationPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Confirmation'),
+        title: Center(child: Text('Confirmation')),
       ),
       body: Center(
         child: Column(
@@ -214,12 +250,12 @@ class ConfirmationPage extends StatelessWidget {
             Text('Please confirm your account!'),
             SizedBox(height: 10.0),
             ElevatedButton(
-              child: Text('Change Password'),
+              child: Text('Confirm'),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ChangePasswordPage(),
+                    builder: (context) => SuccessfulRegisteredPage(),
                   ),
                 );
               },
@@ -237,7 +273,7 @@ class ChangePasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Change Password'),
+        title: Center(child: Text('Change Password')),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -290,11 +326,14 @@ class ChangePasswordPage extends StatelessWidget {
               child: ElevatedButton(
                 child: Text('Change Password'),
                 onPressed: () {},
+                
               ),
             ),
+
           ],
         ),
       ),
     );
   }
 }
+
